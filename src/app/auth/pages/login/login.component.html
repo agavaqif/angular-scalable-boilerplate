@@ -1,0 +1,23 @@
+
+<div id="loginMain">
+    <h3>Login <a routerLink="/auth/register">Regsiter</a></h3>
+    <form [formGroup] = "loginForm" (ngSubmit) = "onLogin()">
+        <input type="email" formControlName="email" placeholder="Enter Email" >
+        <div *ngIf="submitted && formControls.email.errors" class="text-danger">
+            <div *ngIf="formControls.email.errors.email">Email must be valid.</div>
+            <div *ngIf="formControls.email.errors.required">Email is required.</div>
+        </div>
+
+        <br>
+        <input type="password"  formControlName="password"  placeholder="Enter Password">
+        <div *ngIf="submitted && formControls.password.errors" class="text-danger">
+            <div *ngIf="formControls.password.errors.required">Password is required.</div>
+            <div *ngIf="formControls.password.errors.minlength">
+                Password length must be greater than 3 characters
+            </div>
+        </div>    
+        <br>
+        <button type="submit"> Login </button>
+        <a routerLink="/auth/register">Forgot Password</a>
+    </form>
+</div>
