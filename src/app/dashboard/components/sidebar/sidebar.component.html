@@ -1,0 +1,9 @@
+<h5>Menu</h5>
+<ul>
+    <li routerLinkActive="active" *ngFor="let menuItem of menuItems" class="{{menuItem.class}}">
+        <a class="nav-link" [routerLink]="[menuItem.path]">
+           
+            {{menuItem.title}}
+        </a>
+    </li>
+</ul>

@@ -30,9 +30,7 @@ export class LoginComponent implements OnInit {
   onLogin(): void {
     // console.log(this.loginForm.value);
     this.submitted = true;
-    console.log(this.loginForm.controls.password.errors)
     if (this.loginForm.valid) {
-      console.log(this.loginForm.value);
       this.authService.logIn();
     }
   }
